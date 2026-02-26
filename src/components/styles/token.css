@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #0070f3;
+  --secondary-color: #1c1c1e;
+  --background-color: #f5f5f5;
+  --danger-color: #e00;
+  --text-color: #333;
+  --font-family: "Helvetica Neue", sans-serif;
+  --font-size: 16px;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
