@@ -18,12 +18,12 @@ function AddTaskModal({ onClose }) {
     <>
       {/* overlay */}
       <div
-        className="fixed inset-0 bg-black/50 flex items-center justify-center"
+        className="fixed inset-0 bg-white/30 flex items-center justify-center w-full h-full"
         onClick={onClose}
       >
         {/* modal */}
         <div
-          className="p-6 border border-gray-200 rounded-md bg-white w-125"
+          className="bg-purple-600/60 backdrop-blur-md border border-white/20 rounded-xl p-4 w-125"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center">
@@ -35,12 +35,12 @@ function AddTaskModal({ onClose }) {
               <CrossIcon
                 width={20}
                 height={20}
-                className="cursor-pointer rotate-45"
+                className="cursor-pointer rotate-45 text-white"
                 onClick={onClose}
               />
             </Button>
           </div>
-          <div className="mt-4">
+          <div className="mt-6">
             <form onSubmit={handleSubmit} className="space-y-4">
               <label className="mb-1 block">Task Title</label>
               <input
@@ -61,9 +61,8 @@ function AddTaskModal({ onClose }) {
                 <option value="high">High</option>
               </select>
               {/* date */}
-              <label>Due Date</label>
+              <label className="mb-1 block">Due Date</label>
               <input
-                className="mb-1 block"
                 type="date"
                 id="date"
                 value={dueDate}

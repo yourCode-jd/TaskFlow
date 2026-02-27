@@ -1,10 +1,11 @@
 const variantClasses = {
-  primary: "bg-blue-500 text-white hover:bg-blue-700",
+  primary: "bg-purple-600 text-white hover:bg-purple-700",
   secondary: "bg-gray-200 text-black hover:bg-gray-300",
-  outline: "border border-gray-400 text-black hover:bg-gray-200",
+  outline: "border border-white text-white hover:bg-white/20",
   danger: "bg-red-500 text-white hover:bg-red-700",
   link: "text-white hover:bg-gray-600 bg-gray-700/30",
-  icon: "bg-gray-200 !p-0 hover:scale-110 ",
+  icon: "bg-purple-600 !p-0 hover:scale-110 hover:bg-purple-700",
+  navLink: "hover:bg-purple-600 bg-purple-400",
 };
 
 const sizeClasses = {
@@ -27,7 +28,7 @@ const Button = ({
     <button
       className={`
         inline-flex items-center justify-center gap-2
-        rounded-lg font-medium transition
+        rounded-lg font-medium transition focus:outline-none focus:ring-1 focus:ring-white/50
         ${variantClasses[variant]}
         ${sizeClasses[size]}
         ${disabled ? "opacity-50 cursor-not-allowed" : ""}
