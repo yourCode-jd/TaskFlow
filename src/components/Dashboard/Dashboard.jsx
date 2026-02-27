@@ -1,16 +1,16 @@
 import Sidebar from "../Sidebar/Sidebar";
 import Header from "../Header/Header";
-import Card from "../Card/Card";
+import DashboardContent from "../DashboardContent/DashboardContent";
 
 function Dashboard() {
   return (
-    <div className="grid grid-cols-[250px_1fr]">
+    <div className="grid grid-cols-[250px_1fr] gap-6 p-4 bg-linear-to-br from-blue-500 to-purple-500">
       <aside className="">
         <Sidebar />
       </aside>
-      <main className="p-4">
+      <main className="">
         <Header />
-        <Card />
+        <DashboardContent />
       </main>
     </div>
   );

@@ -32,3 +32,13 @@ h5 {
 h6 {
   @apply text-sm;
 }
+
+input,
+select,
+textarea {
+  @apply bg-gray-100 rounded-md p-3 w-full;
+}
+
+select {
+  @apply appearance-none bg-[url('./assets/downArrow.svg')] bg-no-repeat bg-position-[center_right_0.5rem] pr-6;
+}

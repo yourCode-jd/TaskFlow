@@ -21,22 +21,29 @@ function Card() {
       change: "+20%",
       color: "bg-blue-300",
     },
+    {
+      id: 4,
+      title: "Card Title 4",
+      value: 1024,
+      change: "-5%",
+      color: "bg-red-300",
+    },
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4 mt-4">
+    <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mt-4">
       {cardData.map((card) => (
         <div
           key={card.id}
-          className="border border-gray-200 rounded-md p-4 shadow relative overflow-hidden"
+          className=" p-4 py-6 relative overflow-hidden bg-white/20 backdrop-blur-sm rounded-xl"
         >
           <h3>{card.title}</h3>
-          <div className="flex justify-between items-baseline mb-4 mt-2">
+          <div className="flex justify-between items-baseline mt-2">
             <h2>{card.value}</h2>
             <span>{card.change}</span>
           </div>
           <div
-            className={`${card.color} p-2 w-full absolute bottom-0 left-0`}
+            className={`${card.color} p-1 w-full absolute bottom-0 left-0`}
           ></div>
         </div>
       ))}

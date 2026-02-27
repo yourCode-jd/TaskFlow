@@ -1,54 +1,56 @@
+"Use client";
+import { BarChart2, Home, Settings, Users, File } from "lucide-react";
 import Button from "../Button/Button";
 
 function Sidebar() {
   return (
-    <div className="h-screen bg-gray-800 text-white p-4">
-      <div className="px-4 py-2"> TaskFlow</div>
-      <div className="mt-4 pt-4 border-t border-gray-700">
+    <div className="h-screen bg-white/20 backdrop-blur-sm rounded-xl text-white p-6">
+      <h2 className="uppercase text-white!">TaskFlow</h2>
+      <div className="mt-4 pt-4 border-t border-white/20">
         <ul className="space-y-2">
           <li>
             <Button
               variant="primary"
               size="md"
-              className="w-full justify-start"
+              className="w-full justify-start opacity-50"
             >
-              Dashboard
+              <Home width={20} height={20} /> Dashboard
             </Button>
           </li>
           <li>
             <Button
               variant="primary"
               size="md"
-              className="w-full justify-start"
+              className="w-full justify-start opacity-50"
             >
-              My Tasks
+              <File width={20} height={20} /> My Tasks
             </Button>
           </li>
           <li>
             <Button
               variant="primary"
               size="md"
-              className="w-full justify-start"
+              className="w-full justify-start opacity-50"
             >
-              Teams
+              <Users width={20} height={20} /> Teams
             </Button>
           </li>
           <li>
             <Button
               variant="primary"
               size="md"
-              className="w-full justify-start"
+              className="w-full justify-start opacity-50"
             >
-              Analytics
+              <BarChart2 width={20} height={20} /> Analytics
             </Button>
           </li>
           <li>
             <Button
               variant="primary"
               size="md"
-              className="w-full justify-start"
+              className="w-full justify-start opacity-50"
             >
-              Settings
+              <Settings width={20} height={20} /> Settings
             </Button>
           </li>
         </ul>

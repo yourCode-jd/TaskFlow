@@ -1,8 +1,10 @@
 const variantClasses = {
-  primary: "bg-[var(--primary-color)] text-white hover:bg-blue-700",
-  secondary: "bg-[var(--secondary-color)] text-black hover:bg-gray-300",
-  outline: "border border-gray-400 text-black hover:bg-gray-100",
-  danger: "bg-[var(--danger-color)] text-white hover:bg-red-700",
+  primary: "bg-blue-500 text-white hover:bg-blue-700",
+  secondary: "bg-gray-200 text-black hover:bg-gray-300",
+  outline: "border border-gray-400 text-black hover:bg-gray-200",
+  danger: "bg-red-500 text-white hover:bg-red-700",
+  link: "text-white hover:bg-gray-600 bg-gray-700/30",
+  icon: "bg-gray-200 !p-0 hover:scale-110 ",
 };
 
 const sizeClasses = {
