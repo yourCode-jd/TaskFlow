@@ -1,5 +1,6 @@
 import Sidebar from "../Sidebar/Sidebar";
 import Header from "../Header/Header";
+import Card from "../Card/Card";
 
 function Dashboard() {
   return (
@@ -9,6 +10,7 @@ function Dashboard() {
       </aside>
       <main className="p-4">
         <Header />
+        <Card />
       </main>
     </div>
   );
