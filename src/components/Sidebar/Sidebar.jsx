@@ -4,8 +4,8 @@ import Button from "../Button/Button";
 
 function Sidebar() {
   return (
-    <div className="h-screen rounded-xl text-white flex flex-col gap-5 border  border-white/50 bg-white/10 p-4">
-      <h2 className="uppercase hover:bg-purple-600 bg-purple-400 text-center p-6 rounded-xl text-white!">
+    <div className="h-screen rounded-xl text-white flex flex-col gap-5 border  border-white/50 bg-white/90 p-4">
+      <h2 className="uppercase hover:bg-gray-700 bg-gray-600 text-center p-6 rounded-xl text-white!">
         TaskFlow
       </h2>
       <div className="">

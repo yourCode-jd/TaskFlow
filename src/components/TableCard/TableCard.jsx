@@ -8,7 +8,7 @@ function TableCard() {
 
   return (
     <>
-      <div className="mt-5 p-4 bg-purple-600/20 rounded-xl">
+      <div className="mt-5 p-4 bg-white/90 rounded-xl">
         <div className="flex justify-between items-center">
           <h2>Task</h2>
           <Button
@@ -23,7 +23,7 @@ function TableCard() {
         <div className="overflow-x-auto">
           <table className="w-full mt-4 border-collapse shadow-xs">
             <thead>
-              <tr className="bg-purple-600/10">
+              <tr className="bg-cyan-800/10">
                 <th className="px-4 py-3 text-left">Task</th>
                 <th className="px-4 py-3 text-left">Due Date</th>
                 <th className="px-4 py-3 text-left">Status</th>

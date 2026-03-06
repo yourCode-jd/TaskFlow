@@ -31,11 +31,11 @@ function Card() {
       {cardData.map((card) => (
         <div
           key={card.id}
-          className=" p-4 relative overflow-hidden  bg-purple-600/20 rounded-xl shadow-xs "
+          className=" p-4 relative overflow-hidden  bg-white/90 rounded-xl shadow-xs "
         >
           <h3>{card.title}</h3>
           <div className="flex justify-between items-baseline mt-6">
-            <span className="text-2xl font-semibold bg-purple-600/30 p-2 rounded-md">
+            <span className="text-2xl font-semibold bg-cyan-800/50 p-2 rounded-md">
               {card.value}
             </span>
             <span className="text-white">{card.change}</span>

@@ -2,7 +2,7 @@ import { BellDot, CircleUserRound, Search } from "lucide-react";
 
 function Header() {
   return (
-    <div className="rounded-xl p-4 shadow-xs bg-purple-600/20">
+    <div className="rounded-xl p-4 shadow-xs bg-white/90">
       <div className="flex justify-between items-center gap-5">
         <div className="relative w-125">
           {/* Search */}
@@ -19,10 +19,10 @@ function Header() {
         </div>
         {/* Icons */}
         <div className="flex gap-4">
-          <button className="text-white hover:text-white/80">
+          <button className="text-cyan-800 hover:text-cyan-800/80">
             <BellDot width={30} height={30} />
           </button>
-          <button className="text-white hover:text-white/80">
+          <button className="text-cyan-800 hover:text-cyan-800/80">
             <CircleUserRound width={30} height={30} />
           </button>
         </div>

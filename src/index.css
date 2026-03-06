@@ -47,7 +47,7 @@ button {
 input,
 select,
 textarea {
-  @apply rounded-md p-3 w-full bg-transparent border border-white/20 placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-white/50;
+  @apply rounded-md p-3 w-full bg-transparent border border-cyan-800/20 placeholder:text-cyan-800/50 focus:outline-none focus:ring-1 focus:ring-cyan-800/50;
 }
 
 select {
@@ -55,5 +55,5 @@ select {
 }
 
 tr {
-  @apply text-[#333333] hover:bg-white/20;
+  @apply text-[#333333] hover:bg-cyan-800/20;
 }
