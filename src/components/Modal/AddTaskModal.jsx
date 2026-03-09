@@ -18,12 +18,12 @@ function AddTaskModal({ onClose }) {
     <>
       {/* overlay */}
       <div
-        className="fixed inset-0 bg-white/30 flex items-center justify-center w-full h-full"
+        className="fixed inset-0 bg-cyan-800/40 flex items-center justify-center w-full h-full"
         onClick={onClose}
       >
         {/* modal */}
         <div
-          className="bg-cyan-800/20 backdrop-blur-md border border-white/20 rounded-xl p-4 w-125"
+          className="bg-white/80 backdrop-blur-md border border-white/20 rounded-xl p-4 sm:w-125 w-[92%]"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center">

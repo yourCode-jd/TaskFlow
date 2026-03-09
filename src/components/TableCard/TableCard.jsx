@@ -8,7 +8,7 @@ function TableCard() {
 
   return (
     <>
-      <div className="mt-5 p-4 bg-white/50 rounded-xl">
+      <div className="lg:mt-5 mt-3 p-4 bg-white/70 rounded-xl">
         <div className="flex justify-between items-center">
           <h2>Task</h2>
           <Button
@@ -20,8 +20,8 @@ function TableCard() {
             New Task
           </Button>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full mt-4 border-collapse shadow-xs">
+        <div className="overflow-x-auto w-full">
+          <table className="min-w-175 w-full mt-4 border-collapse shadow-xs">
             <thead>
               <tr className="bg-cyan-800/10">
                 <th className="px-4 py-3 text-left">Task</th>
@@ -31,24 +31,33 @@ function TableCard() {
                 <th className="px-4 py-3 text-left">Actions</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td className="border-t border-white/10 px-4 py-3">Task 1</td>
+
                 <td className="border-t border-white/10 px-4 py-3">
                   2023-09-01
                 </td>
+
                 <td className="border-t border-white/10 px-4 py-3">
                   In Progress
                 </td>
+
                 <td className="border-t border-white/10 px-4 py-3">High</td>
-                <td className="border-t border-white/10 px-4 py-3 space-x-4 flex">
-                  <a className="flex items-center gap-1">
-                    <Edit width={16} height={16} /> Edit
-                  </a>
-                  <a className="flex items-center gap-1 text-red-500">
-                    <Delete width={16} height={16} />
-                    Delete
-                  </a>
+
+                <td className="border-t border-white/10 px-4 py-3">
+                  <div className="flex gap-4">
+                    <button className="flex items-center gap-1">
+                      <Edit size={16} />
+                      Edit
+                    </button>
+
+                    <button className="flex items-center gap-1 text-red-500">
+                      <Delete size={16} />
+                      Delete
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody>

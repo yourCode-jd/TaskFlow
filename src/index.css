@@ -10,23 +10,23 @@ h6 {
 }
 
 h1 {
-  @apply text-3xl;
+  @apply lg:text-3xl text-2xl;
 }
 
 h2 {
-  @apply text-2xl;
+  @apply lg:text-2xl text-xl;
 }
 
 h3 {
-  @apply text-xl;
+  @apply lg:text-xl text-lg;
 }
 
 h4 {
-  @apply text-lg;
+  @apply lg:text-lg text-base;
 }
 
 h5 {
-  @apply text-base;
+  @apply lg:text-base text-sm;
 }
 
 h6 {
