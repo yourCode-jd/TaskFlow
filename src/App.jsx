@@ -1,10 +1,26 @@
-import Dashboard from "./components/Dashboard/Dashboard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import DashboardLayout from "./layouts/DashboardLayout";
+
+import Dashboard from "./pages/Dashboard/page";
+import Tasks from "./pages/Tasks/page";
+import Teams from "./pages/Teams/page";
+import Analytics from "./pages/Analytics/page";
+import Settings from "./pages/Settings/page";
 
 function App() {
   return (
-    <>
-      <Dashboard />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="tasks" element={<Tasks />} />
+          <Route path="teams" element={<Teams />} />
+          <Route path="analytics" element={<Analytics />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

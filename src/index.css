@@ -33,12 +33,6 @@ h6 {
   @apply text-sm;
 }
 
-p,
-span,
-label {
-  @apply text-white;
-}
-
 a,
 button {
   @apply focus:outline-none focus:ring-1 focus:ring-white/50;

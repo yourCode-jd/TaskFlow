@@ -23,7 +23,7 @@ function AddTaskModal({ onClose }) {
       >
         {/* modal */}
         <div
-          className="bg-purple-600/60 backdrop-blur-md border border-white/20 rounded-xl p-4 w-125"
+          className="bg-cyan-800/20 backdrop-blur-md border border-white/20 rounded-xl p-4 w-125"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center">

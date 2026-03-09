@@ -8,7 +8,7 @@ function TableCard() {
 
   return (
     <>
-      <div className="mt-5 p-4 bg-white/90 rounded-xl">
+      <div className="mt-5 p-4 bg-white/50 rounded-xl">
         <div className="flex justify-between items-center">
           <h2>Task</h2>
           <Button
