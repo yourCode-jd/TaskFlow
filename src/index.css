@@ -41,7 +41,11 @@ button {
 input,
 select,
 textarea {
-  @apply rounded-md p-3 w-full bg-transparent border border-cyan-800/20 placeholder:text-cyan-800/50 focus:outline-none focus:ring-1 focus:ring-cyan-800/50;
+  @apply text-[#333333] rounded-md p-3 w-full bg-transparent border border-cyan-800/20 placeholder:text-cyan-800/50 focus:outline-none focus:ring-1 focus:ring-cyan-800/50;
+}
+
+label {
+  @apply block mb-1 text-sm font-medium text-[#333333];
 }
 
 select {

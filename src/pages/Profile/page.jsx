@@ -1,11 +1,12 @@
 import { useState } from "react";
 import Button from "../../components/Button/Button";
 
-function Settings() {
+function page() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: "",
+    role: "",
+    bio: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -18,7 +19,6 @@ function Settings() {
       [name]: value,
     }));
 
-    // clear error when user types
     setErrors((prev) => ({
       ...prev,
       [name]: "",
@@ -35,13 +35,15 @@ function Settings() {
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!formData.email.includes("@")) {
-      newErrors.email = "Invalid email format";
+      newErrors.email = "Enter a valid email";
     }
 
-    if (!formData.password.trim()) {
-      newErrors.password = "Password is required";
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters";
+    if (!formData.role.trim()) {
+      newErrors.role = "Role is required";
+    }
+
+    if (formData.bio.length > 200) {
+      newErrors.bio = "Bio must be under 200 characters";
     }
 
     return newErrors;
@@ -57,25 +59,34 @@ function Settings() {
       return;
     }
 
-    console.log("Settings Updated:", formData);
-
-    alert("Settings saved successfully!");
+    console.log("Profile Updated:", formData);
+    alert("Profile updated successfully!");
   };
 
   return (
-    <div className="bg-white/70 backdrop-blur-md rounded-xl md:p-6 p-4 shadow-sm lg:max-w-2xl max-w-full">
-      <h2 className="text-xl font-semibold mb-6">Account Settings</h2>
+    <div className="bg-white/70 backdrop-blur-md rounded-xl md:p-6 p-4 shadow-sm max-w-3xl">
+      {/* Profile Avatar */}
+      <div className="flex items-center gap-4 mb-6">
+        <img
+          src="https://i.pravatar.cc/150?img=12"
+          alt="profile"
+          className="w-16 h-16 rounded-full object-cover"
+        />
 
-      <form
-        onReset={() => setFormData({ name: "", email: "", password: "" })}
-        onSubmit={handleSubmit}
-        className="md:space-y-5 space-y-2"
-      >
+        <div>
+          <h3 className="font-semibold">Your Name</h3>
+          <p className="text-sm text-gray-500">Update your personal info</p>
+        </div>
+      </div>
+
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="md:space-y-5 space-y-2">
         {/* Name */}
         <div>
           <label htmlFor="name" className="block mb-1 text-sm font-medium">
             Full Name
           </label>
+
           <input
             type="text"
             id="name"
@@ -87,6 +98,7 @@ function Settings() {
               errors.name ? "border-red-500" : "border-gray-200"
             }`}
           />
+
           {errors.name && (
             <p className="text-red-500 text-sm mt-1">{errors.name}</p>
           )}
@@ -97,51 +109,74 @@ function Settings() {
           <label htmlFor="email" className="block mb-1 text-sm font-medium">
             Email
           </label>
+
           <input
             type="email"
             id="email"
-            placeholder="Enter your email"
             autoComplete="email"
+            placeholder="Enter email"
             value={formData.email}
             onChange={handleChange}
             className={`w-full rounded-xl p-2 border ${
               errors.email ? "border-red-500" : "border-gray-200"
             }`}
           />
+
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email}</p>
           )}
         </div>
 
-        {/* Password */}
+        {/* Role */}
         <div>
-          <label htmlFor="password" className="block mb-1 text-sm font-medium">
-            Password
+          <label htmlFor="role" className="block mb-1 text-sm font-medium">
+            Role
           </label>
+
           <input
-            type="password"
-            id="password"
-            autoComplete="new-password"
-            placeholder="Enter new password"
-            value={formData.password}
+            type="text"
+            id="role"
+            name="role"
+            placeholder="Frontend Developer"
+            value={formData.role}
             onChange={handleChange}
             className={`w-full rounded-xl p-2 border ${
-              errors.password ? "border-red-500" : "border-gray-200"
+              errors.role ? "border-red-500" : "border-gray-200"
             }`}
           />
-          {errors.password && (
-            <p className="text-red-500 text-sm mt-1">{errors.password}</p>
+
+          {errors.role && (
+            <p className="text-red-500 text-sm mt-1">{errors.role}</p>
           )}
         </div>
 
-        {/* Buttons */}
-        <div className="flex justify-end gap-3 pt-2">
-          <Button type="reset" variant="outline">
-            Reset
-          </Button>
+        {/* Bio */}
+        <div>
+          <label htmlFor="bio" className="block mb-1 text-sm font-medium">
+            Bio
+          </label>
 
+          <textarea
+            id="bio"
+            name="bio"
+            placeholder="Write something about yourself..."
+            value={formData.bio}
+            onChange={handleChange}
+            rows="4"
+            className={`w-full rounded-xl p-2 border ${
+              errors.bio ? "border-red-500" : "border-gray-200"
+            }`}
+          />
+
+          {errors.bio && (
+            <p className="text-red-500 text-sm mt-1">{errors.bio}</p>
+          )}
+        </div>
+
+        {/* Button */}
+        <div className="flex justify-end ">
           <Button type="submit" variant="primary">
-            Save Settings
+            Save Profile
           </Button>
         </div>
       </form>
@@ -149,4 +184,4 @@ function Settings() {
   );
 }
 
-export default Settings;
+export default page;

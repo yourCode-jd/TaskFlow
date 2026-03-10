@@ -7,6 +7,8 @@ import Tasks from "./pages/Tasks/page";
 import Teams from "./pages/Teams/page";
 import Analytics from "./pages/Analytics/page";
 import Settings from "./pages/Settings/page";
+import NotFound from "./pages/NotFound/page";
+import Profile from "./pages/Profile/page";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
           <Route path="teams" element={<Teams />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="profile" element={<Profile />} />
+          {/* 404 Route */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

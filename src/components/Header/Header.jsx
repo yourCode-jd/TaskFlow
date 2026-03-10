@@ -1,61 +1,84 @@
-import { BellDot, CircleUserRound, Search } from "lucide-react";
+import { BellDot, CircleUserRound } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+const pageTitles = {
+  "/": "Dashboard",
+  "/tasks": "My Tasks",
+  "/teams": "Teams",
+  "/analytics": "Analytics",
+  "/profile": "Profile",
+  "/settings": "Settings",
+};
+
 function Header() {
-  const [searchTerm, setSearchTerm] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  };
+  const title = pageTitles[location.pathname] || "Dashboard";
 
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    // Handle search submission logic here
-    console.log("Search term:", searchTerm);
-  };
   return (
-    <header className="rounded-xl p-4 shadow-xs bg-white/70 lg:mb-5 mb-3">
+    <header className="rounded-xl md:px-6 px-4 py-4 shadow-xs bg-white/70 lg:mb-5 mb-3">
       <div className="flex justify-between items-center lg:gap-5 gap-3">
-        <form onSubmit={handleSearchSubmit} className="relative lg:w-125">
-          {/* Search */}
-          <input
-            type="text"
-            placeholder="Search..."
-            className="rounded-xl p-2 pr-10"
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
-          <Search
-            width={20}
-            height={20}
-            className="absolute right-3 top-3.5 text-cyan-800"
-          />
-        </form>
+        {/* Dynamic Page Title */}
+        <h1 className="text-xl font-bold! text-cyan-900 uppercase">{title}</h1>
+
         {/* Icons */}
-        <div className="flex lg:gap-4 gap-2">
-          <div className="text-cyan-700 hover:bg-white/50 cursor-pointer bg-white/30 p-2 rounded-full">
+        <div className="flex items-center lg:gap-3 gap-2">
+          <div className="text-cyan-700 hover:bg-white/50 cursor-pointer">
             <BellDot width={25} height={25} />
-            <sr-only className="sr-only">Notifications</sr-only>
           </div>
+
           <div className="relative">
             <div
               onClick={toggleDropdown}
-              className="text-cyan-700 hover:bg-white/50 cursor-pointer bg-white/30 p-2 rounded-full"
+              className="text-cyan-700 hover:bg-white/50 cursor-pointer bg-white/30 md:p-1.5 p-1 rounded-full"
             >
-              <CircleUserRound width={25} height={25} />
+              {/* <CircleUserRound width={25} height={25} /> */}
+              {/* Profile picture */}
+              <img
+                src="https://i.pravatar.cc/150?img=12"
+                alt="Profile"
+                className="w-8 h-8 rounded-full"
+              />
             </div>
-            {/* dropdown */}
+
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-cyan-800 text-white backdrop-blur-sm rounded-md shadow-lg z-10">
-                {/* Dropdown content */}
+              <div className="absolute right-0 mt-2 w-48 bg-cyan-800 text-white rounded-md shadow-lg z-10">
                 <ul className="py-1">
-                  <li className="px-4 py-2 hover:bg-cyan-700">Profile</li>
-                  <li className="px-4 py-2 hover:bg-cyan-700">Settings</li>
-                  <li className="px-4 py-2 hover:bg-cyan-700">Logout</li>
+                  <li>
+                    <Link
+                      to="/profile"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="block px-4 py-2 hover:bg-cyan-700"
+                    >
+                      Profile
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      to="/settings"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="block px-4 py-2 hover:bg-cyan-700"
+                    >
+                      Settings
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      to="/logout"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="block px-4 py-2 hover:bg-cyan-700"
+                    >
+                      Logout
+                    </Link>
+                  </li>
                 </ul>
               </div>
             )}

@@ -12,7 +12,7 @@ function DashboardLayout() {
 
         <main className="flex-1">
           <Header />
-          <div className="main-content">
+          <div className="main-content min-h-[80vh]">
             <Outlet />
           </div>
         </main>

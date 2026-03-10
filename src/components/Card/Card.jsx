@@ -31,7 +31,7 @@ function Card() {
       {cardData.map((card) => (
         <div
           key={card.id}
-          className=" p-4 relative overflow-hidden  bg-white/70 rounded-xl shadow-xs "
+          className="md:p-6 p-4 relative overflow-hidden  bg-white/70 rounded-xl shadow-xs "
         >
           <h3>{card.title}</h3>
           <div className="flex justify-between items-baseline mt-6">

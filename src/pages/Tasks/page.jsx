@@ -1,9 +1,7 @@
+import TableCard from "../../components/TableCard/TableCard";
+
 function page() {
-  return (
-    <div className="p-4 relative overflow-hidden bg-white/50 rounded-xl shadow-xs">
-      <h3>Task Content</h3>
-    </div>
-  );
+  return <TableCard />;
 }
 
 export default page;
