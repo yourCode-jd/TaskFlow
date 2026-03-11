@@ -29,7 +29,7 @@ function Header() {
 
         {/* Icons */}
         <div className="flex items-center lg:gap-3 gap-2">
-          <div className="text-cyan-700 hover:bg-white/50 cursor-pointer">
+          <div className="text-cyan-700 cursor-pointer">
             <BellDot width={25} height={25} />
           </div>
 
